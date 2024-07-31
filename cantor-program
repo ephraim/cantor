@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ -z "$1" ]] ; then
+	echo "Missing firmware bin file parameter"
+	exit
+fi
+
+echo "Press UpperLeft key and plug the keyboard!"
+read
+
+dfu-util -l
+
+read
+
+dfu-util --device 0483:df11 --alt 0 --dfuse-address 0x08000000 --download "$1"
