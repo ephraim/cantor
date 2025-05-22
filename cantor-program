@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# json -> bin
+# https://config.qmk.fm/#/cantor/LAYOUT_split_3x6_3
+
+
 if [[ -z "$1" ]] ; then
 	echo "Missing firmware bin file parameter"
 	exit
