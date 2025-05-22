@@ -2,14 +2,19 @@
 
 # json -> bin
 # https://config.qmk.fm/#/cantor/LAYOUT_split_3x6_3
-
+#* **Bootmagic reset**: Hold down the top left key and plug in the keyboard. For the right side, hold the top right key and plug the keyboard.
+#* **Physical reset button**: 
+#  * Press and hold the BOOT0 button.
+#  * Press and release the NRST button.
+#  * Release the BOOT0 button.
+#* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
 
 if [[ -z "$1" ]] ; then
 	echo "Missing firmware bin file parameter"
 	exit
 fi
 
-echo "Press UpperLeft key and plug the keyboard!"
+echo "Press UpperLeft key and plug the keyboard (not plugged in via KVM switch!)."
 read
 
 dfu-util -l
